@@ -11,12 +11,12 @@ import static com.codeborne.selenide.Selenide.open;
 public class RectangleDrugAndDrop {
     @BeforeAll
     static void beforeAll() {
-        Configuration.baseUrl = "https://the-internet.herokuapp.com/drag_and_drop";
+        Configuration.baseUrl = "https://the-internet.herokuapp.com";
     }
 
     @Test
     void drugAndDrop() {
-        open("");
+        open("/drag_and_drop");
         $(".example").shouldHave(text("Drag and Drop"));
         $("#column-a").dragAndDropTo("#column-b");
         $(".column").shouldHave(text("B"));
